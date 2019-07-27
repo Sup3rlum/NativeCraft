@@ -12,12 +12,16 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBuffer.cpp" />
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="VertexBuffer.h" />
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
