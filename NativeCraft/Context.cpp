@@ -72,6 +72,7 @@ int Context::InitGLFW()
 	glfwWindowHint(GLFW_OPENGL_PROFILE,				_contextParameters->contextProfile);
 
 	_window = glfwCreateWindow(_contextParameters->width, _contextParameters->height, "NativeCraft", NULL, NULL);
+
 	if (_window == NULL)
 	{
 		fprintf(stderr, "OpenGL 3.3 is not supported by this PC");
