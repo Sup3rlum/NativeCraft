@@ -6,13 +6,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NativeCraft.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Context.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -21,6 +27,12 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="VertexBuffer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
