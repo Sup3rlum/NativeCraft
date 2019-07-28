@@ -44,5 +44,8 @@
     <ClInclude Include="Chunk.h">
       <Filter>Source\World</Filter>
     </ClInclude>
+    <ClInclude Include="nchfx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
