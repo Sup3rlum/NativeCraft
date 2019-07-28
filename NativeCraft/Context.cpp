@@ -2,8 +2,9 @@
 
 
 
-GLFWwindow* Context::_window = NULL;
-ContextParameters* Context::_contextParameters = NULL;
+GLFWwindow*			Context::_window			= NULL;
+ContextParameters*	Context::_contextParameters	= NULL;
+FrameTime*			Context::_frameTime			= NULL;
 
 
 int Context::Initialize(ContextParameters* _params)

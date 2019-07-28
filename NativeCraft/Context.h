@@ -4,6 +4,8 @@
 
 #include "nchfx.h"
 
+#include "FrameTime.h"
+
 using namespace glm;
 
 
@@ -26,6 +28,7 @@ class Context
 public:
 	static GLFWwindow* _window;
 	static ContextParameters* _contextParameters;
+	static FrameTime* _frameTime;
 
 	static int Initialize(ContextParameters* _params);
 	static void Frame();
