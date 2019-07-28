@@ -4,6 +4,9 @@
     <Filter Include="Source">
       <UniqueIdentifier>{97f60ecb-1be3-480a-96e4-2ee0ca79310c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\World">
+      <UniqueIdentifier>{12740210-cc34-4253-aed2-0f112e67c524}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shader.cpp">
@@ -21,6 +24,9 @@
     <ClCompile Include="Context.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Chunk.cpp">
+      <Filter>Source\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -34,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="Context.h">
       <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Chunk.h">
+      <Filter>Source\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
