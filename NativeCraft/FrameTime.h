@@ -5,6 +5,9 @@
 class FrameTime
 {
 public:
+
+	FrameTime();
+
 	double DeltaTime;
 	double TotalTime;
 };

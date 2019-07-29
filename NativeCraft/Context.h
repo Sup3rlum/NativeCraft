@@ -31,7 +31,7 @@ public:
 	static FrameTime* _frameTime;
 
 	static int Initialize(ContextParameters* _params);
-	static void Frame();
+	static void Frame(FrameTime* _frTime);
 
 	static int InitGLEW();
 	static int InitGLFW();

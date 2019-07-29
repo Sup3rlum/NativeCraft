@@ -27,7 +27,9 @@
     <ClCompile Include="Chunk.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
-    <ClCompile Include="FrameTime.cpp" />
+    <ClCompile Include="FrameTime.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -48,6 +50,8 @@
     <ClInclude Include="nchfx.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="FrameTime.h" />
+    <ClInclude Include="FrameTime.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

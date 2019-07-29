@@ -15,15 +15,19 @@ int Context::Initialize(ContextParameters* _params)
 	InitGLFW();
 	InitGLEW();
 
+	_frameTime = new FrameTime();
+
 	// Main Loop
 
 	do
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
-		glClearColor(0.0f, 0.7f, 1.0f, 1.0f);
+		glClearColor(0.1f, 0.5f, 1.0f, 1.0f);
 
+		_frameTime->DeltaTime = glfwGetTime() - _frameTime->TotalTime;
+		_frameTime->TotalTime = glfwGetTime();
 
-		Frame();
+		Frame(_frameTime);
 
 		glfwSwapBuffers(_window);
 		glfwPollEvents();
@@ -34,7 +38,7 @@ int Context::Initialize(ContextParameters* _params)
 
 	return 0;
 }
-void Context::Frame()
+void Context::Frame(FrameTime* _frTime)
 {
 
 }
