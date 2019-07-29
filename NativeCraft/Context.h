@@ -6,21 +6,10 @@
 
 #include "FrameTime.h"
 #include "Camera.h"
+#include "Scene.h"
 
 using namespace glm;
 
-
-struct ContextParameters
-{
-public:
-	GLuint contextMajorVersion;
-	GLuint contextMinorVersion;
-	GLuint contextSampleCount;
-	GLuint contextCompatibility;
-	GLuint contextProfile;
-	GLuint width;
-	GLuint height;
-};
 
 
 class Context

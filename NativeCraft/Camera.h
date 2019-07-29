@@ -3,6 +3,7 @@
 #include "nchfx.h"
 
 #include "FrameTime.h"
+#include "ContextParameters.h"
 
 using namespace glm;
 
@@ -26,7 +27,7 @@ public:
 	float horizontalAngle;
 	float verticalAngle;
 
-	void Update(FrameTime* _frTime);
+	void Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* _frTime);
 
 	float mouseSpeed = 0.001f;
 	float flySpeed = 0.5f;

@@ -30,6 +30,12 @@
     <ClCompile Include="FrameTime.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="ContextParameters.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -51,6 +57,12 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="FrameTime.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="ContextParameters.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

@@ -112,6 +112,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Projects\_Libraries\glfw-3.3.bin.WIN64\include;D:\Projects\_Libraries\glm;D:\Projects\_Libraries\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,6 +120,9 @@
       <AdditionalLibraryDirectories>D:\Projects\_Libraries\glew-2.1.0\lib\Release\x64;D:\Projects\_Libraries\glfw-3.3.bin.WIN64\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -162,8 +166,10 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chunk.cpp" />
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="ContextParameters.cpp" />
     <ClCompile Include="FrameTime.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
@@ -171,8 +177,10 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chunk.h" />
     <ClInclude Include="Context.h" />
+    <ClInclude Include="ContextParameters.h" />
     <ClInclude Include="FrameTime.h" />
     <ClInclude Include="nchfx.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="VertexBuffer.h" />
   </ItemGroup>

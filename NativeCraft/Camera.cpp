@@ -13,19 +13,19 @@ Camera::~Camera()
 
 }
 
-void Camera::Update(FrameTime* _frTime)
+void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* _frTime)
 {
 	double xpos, ypos;
 
-	glfwGetCursorPos(Context::_window, &xpos, &ypos);
+	glfwGetCursorPos(_window, &xpos, &ypos);
 
 	glfwSetCursorPos(
-		Context::_window, 
-		Context::_contextParameters->width / 2.0, 
-		Context::_contextParameters->height / 2.0);
+		_window, 
+		_params->width / 2.0, 
+		_params->height / 2.0);
 
-	horizontalAngle += mouseSpeed * _frTime->DeltaTime * (Context::_contextParameters->width / 2.0 - xpos);
-	verticalAngle	+= mouseSpeed * _frTime->DeltaTime * (Context::_contextParameters->height / 2.0 - ypos);
+	horizontalAngle += mouseSpeed * _frTime->DeltaTime * (_params->width / 2.0 - xpos);
+	verticalAngle	+= mouseSpeed * _frTime->DeltaTime * (_params->height / 2.0 - ypos);
 
 	Target = vec3
 	(
@@ -43,19 +43,19 @@ void Camera::Update(FrameTime* _frTime)
 
 	Up = cross(Right, Target);
 
-	if (glfwGetKey(Context::_window, GLFW_KEY_UP) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_UP) == GLFW_PRESS) 
 	{
 		Position += Target * (float)_frTime->DeltaTime * flySpeed;
 	}
-	if (glfwGetKey(Context::_window, GLFW_KEY_DOWN) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_DOWN) == GLFW_PRESS) 
 	{
 		Position -= Target * (float)_frTime->DeltaTime * flySpeed;
 	}
-	if (glfwGetKey(Context::_window, GLFW_KEY_RIGHT) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_RIGHT) == GLFW_PRESS) 
 	{
 		Position += Right * (float)_frTime->DeltaTime * flySpeed;
 	}
-	if (glfwGetKey(Context::_window, GLFW_KEY_LEFT) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_LEFT) == GLFW_PRESS) 
 	{
 		Position -= Right * (float)_frTime->DeltaTime * flySpeed;
 	}

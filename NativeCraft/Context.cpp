@@ -17,8 +17,6 @@ int Context::Initialize(ContextParameters* _params)
 	InitGLEW();
 
 	_frameTime = new FrameTime();
-
-
 	_camera = new Camera();
 
 	// Main Loop
@@ -49,7 +47,7 @@ void Context::Frame(FrameTime* _frTime)
 }
 void Context::Update(FrameTime* _frTime)
 {
-	_camera->Update(_frameTime);
+	_camera->Update(_window, _contextParameters, _frameTime);
 }
 
 int Context::InitGLEW()
