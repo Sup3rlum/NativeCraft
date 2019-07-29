@@ -6,7 +6,7 @@ Camera::Camera()
 	horizontalAngle = 0.0f;
 	verticalAngle = 3.14159265f;
 
-	Projection == glm::perspective(Fov, 16.0f / 9.0f, 1.0f, 100.0f);
+	Projection == perspective(Fov, 16.0f / 9.0f, 1.0f, 100.0f);
 }
 Camera::~Camera()
 {
@@ -59,4 +59,6 @@ void Camera::Update(FrameTime* _frTime)
 	{
 		Position -= Right * (float)_frTime->DeltaTime * flySpeed;
 	}
+
+	View = lookAt(Position, Position + Target, Up);
 }

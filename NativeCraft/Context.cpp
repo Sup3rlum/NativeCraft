@@ -5,6 +5,7 @@
 GLFWwindow*			Context::_window			= NULL;
 ContextParameters*	Context::_contextParameters	= NULL;
 FrameTime*			Context::_frameTime			= NULL;
+Camera*				Context::_camera			= NULL;
 
 
 int Context::Initialize(ContextParameters* _params)
@@ -17,6 +18,9 @@ int Context::Initialize(ContextParameters* _params)
 
 	_frameTime = new FrameTime();
 
+
+	_camera = new Camera();
+
 	// Main Loop
 
 	do
@@ -27,6 +31,7 @@ int Context::Initialize(ContextParameters* _params)
 		_frameTime->DeltaTime = glfwGetTime() - _frameTime->TotalTime;
 		_frameTime->TotalTime = glfwGetTime();
 
+		Update(_frameTime);
 		Frame(_frameTime);
 
 		glfwSwapBuffers(_window);
@@ -41,6 +46,10 @@ int Context::Initialize(ContextParameters* _params)
 void Context::Frame(FrameTime* _frTime)
 {
 
+}
+void Context::Update(FrameTime* _frTime)
+{
+	_camera->Update(_frameTime);
 }
 
 int Context::InitGLEW()
