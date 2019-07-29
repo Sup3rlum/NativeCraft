@@ -7,6 +7,9 @@
     <Filter Include="Source\World">
       <UniqueIdentifier>{12740210-cc34-4253-aed2-0f112e67c524}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{a10ea90b-e8d8-4428-a675-ecd1dccba89f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shader.cpp">
@@ -34,6 +37,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
+      <Filter>Source\World</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexElements.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -63,7 +69,18 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
+      <Filter>Source\World</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexElements.h">
       <Filter>Source</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\frag.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\vert.glsl">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

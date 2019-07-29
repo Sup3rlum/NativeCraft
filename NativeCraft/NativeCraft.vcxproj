@@ -172,6 +172,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
+    <ClCompile Include="VertexElements.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -183,6 +184,11 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="VertexBuffer.h" />
+    <ClInclude Include="VertexElements.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\frag.glsl" />
+    <None Include="shaders\vert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

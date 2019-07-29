@@ -3,10 +3,12 @@
 
 Camera::Camera()
 {
-	horizontalAngle = 0.0f;
-	verticalAngle = 3.14159265f;
+	horizontalAngle = -3.14159265f / 2.0f;
+	verticalAngle = -3.14159265f / 4.0f;
 
-	Projection == perspective(Fov, 16.0f / 9.0f, 1.0f, 100.0f);
+	Projection = perspective(radians(Fov), 16.0f / 9.0f, 0.1f, 100.0f);
+
+	Position = vec3(4.0f, 4.0f, 4.0f);
 }
 Camera::~Camera()
 {
@@ -43,19 +45,19 @@ void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* 
 
 	Up = cross(Right, Target);
 
-	if (glfwGetKey(_window, GLFW_KEY_UP) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_W) == GLFW_PRESS) 
 	{
 		Position += Target * (float)_frTime->DeltaTime * flySpeed;
 	}
-	if (glfwGetKey(_window, GLFW_KEY_DOWN) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_S) == GLFW_PRESS) 
 	{
 		Position -= Target * (float)_frTime->DeltaTime * flySpeed;
 	}
-	if (glfwGetKey(_window, GLFW_KEY_RIGHT) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_D) == GLFW_PRESS) 
 	{
 		Position += Right * (float)_frTime->DeltaTime * flySpeed;
 	}
-	if (glfwGetKey(_window, GLFW_KEY_LEFT) == GLFW_PRESS) 
+	if (glfwGetKey(_window, GLFW_KEY_A) == GLFW_PRESS) 
 	{
 		Position -= Right * (float)_frTime->DeltaTime * flySpeed;
 	}

@@ -5,7 +5,7 @@
 GLFWwindow*			Context::_window			= NULL;
 ContextParameters*	Context::_contextParameters	= NULL;
 FrameTime*			Context::_frameTime			= NULL;
-Camera*				Context::_camera			= NULL;
+Scene*				Context::_scene				= NULL;
 
 
 int Context::Initialize(ContextParameters* _params)
@@ -17,17 +17,18 @@ int Context::Initialize(ContextParameters* _params)
 	InitGLEW();
 
 	_frameTime = new FrameTime();
-	_camera = new Camera();
+	_scene = new Scene();
 
 	// Main Loop
-
 	do
 	{
+		_frameTime->DeltaTime = glfwGetTime() - _frameTime->TotalTime;
+		_frameTime->TotalTime = glfwGetTime();
+
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.1f, 0.5f, 1.0f, 1.0f);
 
-		_frameTime->DeltaTime = glfwGetTime() - _frameTime->TotalTime;
-		_frameTime->TotalTime = glfwGetTime();
+		glCullFace(GL_FRONT_AND_BACK);
 
 		Update(_frameTime);
 		Frame(_frameTime);
@@ -43,11 +44,11 @@ int Context::Initialize(ContextParameters* _params)
 }
 void Context::Frame(FrameTime* _frTime)
 {
-
+	_scene->Render(_frameTime);
 }
 void Context::Update(FrameTime* _frTime)
 {
-	_camera->Update(_window, _contextParameters, _frameTime);
+	_scene->Update(_window, _contextParameters, _frameTime);
 }
 
 int Context::InitGLEW()
@@ -91,6 +92,9 @@ int Context::InitGLFW()
 		glfwTerminate();
 		return -1;
 	}
+
 	glfwMakeContextCurrent(_window);
+
 	glfwSetInputMode(_window, GLFW_STICKY_KEYS, GL_TRUE);
+	glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 }

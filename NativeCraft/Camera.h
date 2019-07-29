@@ -29,7 +29,7 @@ public:
 
 	void Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* _frTime);
 
-	float mouseSpeed = 0.001f;
-	float flySpeed = 0.5f;
+	float mouseSpeed = 0.03f;
+	float flySpeed = 2.0f;
 };
 
