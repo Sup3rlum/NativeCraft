@@ -25,10 +25,12 @@ int Context::Initialize(ContextParameters* _params)
 		_frameTime->DeltaTime = glfwGetTime() - _frameTime->TotalTime;
 		_frameTime->TotalTime = glfwGetTime();
 
-		glClear(GL_COLOR_BUFFER_BIT);
+		glCullFace(GL_FRONT_AND_BACK);
+		glEnable(GL_DEPTH_TEST);
+
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glClearColor(0.1f, 0.5f, 1.0f, 1.0f);
 
-		glCullFace(GL_FRONT_AND_BACK);
 
 		Update(_frameTime);
 		Frame(_frameTime);
