@@ -172,6 +172,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexElements.cpp" />
   </ItemGroup>
@@ -185,12 +186,16 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexElements.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl" />
     <None Include="shaders\vert.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\dirt.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

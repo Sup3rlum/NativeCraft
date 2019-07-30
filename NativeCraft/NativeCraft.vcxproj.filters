@@ -10,6 +10,9 @@
     <Filter Include="shaders">
       <UniqueIdentifier>{a10ea90b-e8d8-4428-a675-ecd1dccba89f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="textures">
+      <UniqueIdentifier>{ed45f6f4-019e-4ffe-bcd3-07ff347cc8da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shader.cpp">
@@ -43,6 +46,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -76,6 +82,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl">
@@ -84,5 +93,10 @@
     <None Include="shaders\vert.glsl">
       <Filter>shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\dirt.jpg">
+      <Filter>textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

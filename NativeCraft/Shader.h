@@ -2,6 +2,7 @@
 
 
 #include "nchfx.h"
+#include "Texture.h"
 
 using namespace std;
 using namespace glm;
@@ -27,5 +28,7 @@ public:
 
 	void SetFloat(const string& name, float val);
 	void SetInt(const string& name, int val);
+
+	void SetTexture(GLuint _id, Texture* _texture);
 };
 

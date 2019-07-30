@@ -81,3 +81,8 @@ void Shader::SetVector(const string& name, vec4 val)
 {
 	glUniform4fv(glGetUniformLocation(_programID, name.c_str()), 1, value_ptr(val));
 }
+void Shader::SetTexture(GLuint _id, Texture* _tex)
+{
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, _tex->_handle);
+}

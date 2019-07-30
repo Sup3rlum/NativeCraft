@@ -3,7 +3,7 @@
 
 #include "Camera.h"
 #include "Shader.h"
-#include "VertexBuffer.h"
+#include "Chunk.h"
 
 class Scene
 {
@@ -15,8 +15,8 @@ public:
 	void Render(FrameTime* _frTime);
 
 	Shader* _shader;
-	VertexBuffer* _vertexBuffer;
-
+	Chunk* _chunk;
 	Camera* _camera;
+	Texture* _texture;
 };
 
