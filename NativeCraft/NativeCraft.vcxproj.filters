@@ -42,6 +42,7 @@
     <ClCompile Include="VertexElements.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -74,6 +75,7 @@
     <ClInclude Include="VertexElements.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl">
