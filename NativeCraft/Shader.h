@@ -13,10 +13,12 @@ public:
 
 	GLuint _vertex;
 	GLuint _fragment;
+	GLuint _geometry;
 
 	GLuint _programID;
 
 	Shader(const char* vertPath, const char* fragPath);
+	Shader(const char* vertPath, const char* geomPath, const char* fragPath);
 	~Shader();
 
 	void UseProgram();

@@ -17,7 +17,15 @@ Chunk::Chunk(ivec2 _pos)
 		}
 	}
 
-	_vBuffer = new VertexBuffer();
+	_vBuffer = new VertexBuffer(new vec3[4] 
+		{  
+			vec3(-10.0f, -1.0f, -1.0f),
+			vec3(0.0f, 0.0f, 0.0f),
+			vec3(0.0f, 1.0f, 0.0f),
+			vec3(0.0f, 2.0f, 0.0f)
+		},
+		4
+	);
 
 }
 

@@ -175,6 +175,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexElements.cpp" />
+    <ClCompile Include="VisibilityMesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -189,9 +190,11 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexElements.h" />
+    <ClInclude Include="VisibilityMesh.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl" />
+    <None Include="shaders\geom.glsl" />
     <None Include="shaders\vert.glsl" />
   </ItemGroup>
   <ItemGroup>
