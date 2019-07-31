@@ -52,6 +52,9 @@
     <ClCompile Include="VisibilityMesh.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Source\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -91,6 +94,9 @@
     <ClInclude Include="VisibilityMesh.h">
       <Filter>Source\World</Filter>
     </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Source\World</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl">
@@ -100,6 +106,12 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\geom.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\debug_frag.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\debug_vert.glsl">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

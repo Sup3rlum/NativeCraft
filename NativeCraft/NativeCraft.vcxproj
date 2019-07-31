@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chunk.cpp" />
     <ClCompile Include="Context.cpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="VisibilityMesh.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chunk.h" />
     <ClInclude Include="Context.h" />
@@ -193,6 +195,8 @@
     <ClInclude Include="VisibilityMesh.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\debug_frag.glsl" />
+    <None Include="shaders\debug_vert.glsl" />
     <None Include="shaders\frag.glsl" />
     <None Include="shaders\geom.glsl" />
     <None Include="shaders\vert.glsl" />

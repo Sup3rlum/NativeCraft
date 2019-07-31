@@ -2,6 +2,8 @@
 
 #include "nchfx.h"
 
+#include "Block.h"
+
 using namespace glm;
 using namespace std;
 
@@ -10,9 +12,10 @@ class VertexBuffer
 {
 	GLuint _vao;
 public:
-	VertexBuffer(const vec3* _data, int count);
+	VertexBuffer(vector<Block>* _data);
 	void Render();
 
 	GLuint primitiveCount;
 };
+
 

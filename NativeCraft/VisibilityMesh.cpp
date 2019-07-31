@@ -4,7 +4,7 @@ VisibilityMesh::VisibilityMesh()
 {
 	Compute();
 
-	_vBuffer = new VertexBuffer(&_positions[0], 4);
+	//_vBuffer = new VertexBuffer(&_positions[0], 4);
 }
 
 void VisibilityMesh::Compute(/*const int*** _data*/)
