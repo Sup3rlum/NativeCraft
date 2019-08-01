@@ -177,8 +177,10 @@
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexElements.cpp" />
     <ClCompile Include="VisibilityMesh.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Math.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chunk.h" />
@@ -193,6 +195,7 @@
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexElements.h" />
     <ClInclude Include="VisibilityMesh.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\debug_frag.glsl" />
