@@ -4,8 +4,8 @@
 Scene::Scene()
 {
 	_camera = new Camera();
-	_shader = new Shader("./shaders/vert.glsl", "./shaders/geom.glsl", "./shaders/frag.glsl");
-	//_shader = new Shader("./shaders/debug_vert.glsl", "./shaders/debug_frag.glsl");
+	//_shader = new Shader("./shaders/vert.glsl", "./shaders/geom.glsl", "./shaders/frag.glsl");
+	_shader = new Shader("./shaders/vert.glsl", "./shaders/frag.glsl");
 	_chunk = new Chunk(ivec2(0, 0));
 
 	_texture = new Texture("./textures/dirt.jpg");

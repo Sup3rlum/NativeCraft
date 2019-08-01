@@ -13,37 +13,37 @@ uniform mat4 Projection;
 vec3 vertices[24] = vec3[]
 (
 
-	// Z 
+	// Z		0
 	vec3(0.0f,	0.0f,	0.0f),
 	vec3(1.0f,	0.0f,	0.0f),
 	vec3(0.0f,	1.0f,	0.0f),
 	vec3(1.0f,	1.0f,	0.0f),
 
-	// Z''
+	// Z'		1
 	vec3(0.0f,	0.0f,	1.0f),
 	vec3(1.0f,	0.0f,	1.0f),
 	vec3(0.0f,	1.0f,	1.0f),
 	vec3(1.0f,	1.0f,	1.0f),
 
-		// Y 
+	// Y		2
 	vec3(0.0f,	0.0f,	0.0f),
 	vec3(1.0f,	0.0f,	0.0f),
 	vec3(0.0f,	0.0f,	1.0f),
 	vec3(1.0f,	0.0f,	1.0f),
 
-		// Y' 
+	// Y'		3
 	vec3(0.0f,	1.0f,	0.0f),
 	vec3(1.0f,	1.0f,	0.0f),
 	vec3(0.0f,	1.0f,	1.0f),
 	vec3(1.0f,	1.0f,	1.0f),
 
-		// Z 
+	// X		4
 	vec3(0.0f,  0.0f,	0.0f),
 	vec3(0.0f,  1.0f,	0.0f),
 	vec3(0.0f,  0.0f,	1.0f),
 	vec3(0.0f,  1.0f,	1.0f),
 
-		// Z 
+	// X'		5
 	vec3(1.0f,  0.0f,	0.0f),
 	vec3(1.0f,  1.0f,	0.0f),
 	vec3(1.0f,  0.0f,	1.0f),

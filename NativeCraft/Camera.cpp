@@ -3,12 +3,12 @@
 
 Camera::Camera()
 {
-	horizontalAngle = -3.14159265f / 2.0f;
-	verticalAngle = -3.14159265f / 4.0f;
+	horizontalAngle = -half_pi<float>();
+	verticalAngle = -quarter_pi<float>();
 
 	Projection = perspective(radians(Fov), 16.0f / 9.0f, 0.1f, 100.0f);
 
-	Position = vec3(4.0f, 4.0f, 4.0f);
+	Position = vec3(40.0f, 40.0f, 40.0f);
 }
 Camera::~Camera()
 {
@@ -17,6 +17,15 @@ Camera::~Camera()
 
 void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* _frTime)
 {
+	if (verticalAngle > half_pi<float>() - 0.1f)
+	{
+		verticalAngle = half_pi<float>();
+	}
+	else if (verticalAngle < -half_pi<float>() + 0.1f)
+	{
+		verticalAngle = -half_pi<float>();
+	}
+
 	double xpos, ypos;
 
 	glfwGetCursorPos(_window, &xpos, &ypos);
@@ -38,9 +47,9 @@ void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* 
 
 	Right = vec3
 	(
-		sin(horizontalAngle - 1.5708f),
+		sin(horizontalAngle - half_pi<float>()),
 		0,
-		cos(horizontalAngle - 1.5708f)
+		cos(horizontalAngle - half_pi<float>())
 	);
 
 	Up = cross(Right, Target);

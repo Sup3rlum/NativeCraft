@@ -1,7 +1,7 @@
 #pragma once
 
 #include "nchfx.h"
-#include "VertexBuffer.h"
+#include "VisibilityMesh.h"
 #include "FrameTime.h"
 #include "Texture.h"
 
@@ -21,7 +21,7 @@ public:
 
 	unsigned int _data[16][256][16];
 
-	VertexBuffer* _vBuffer;
+	VisibilityMesh* _mesh;
 
 	ivec2 GridPosition;
 	mat4x4 World;

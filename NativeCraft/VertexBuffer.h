@@ -2,7 +2,7 @@
 
 #include "nchfx.h"
 
-#include "Block.h"
+#include "VertexElements.h"
 
 using namespace glm;
 using namespace std;
@@ -11,11 +11,87 @@ using namespace std;
 class VertexBuffer
 {
 	GLuint _vao;
+	GLuint _vbo;
+	GLuint _ibo;
 public:
-	VertexBuffer(vector<Block>* _data);
-	void Render();
+	VertexBuffer(vector<VertexElements> elements);
 
-	GLuint primitiveCount;
+	GLuint _primitiveCount;
+	GLuint _indexCount;
+
+	vector<VertexElements> _elements;
+
+	template <typename T>
+	void SetData(T* _data, int count)
+	{
+
+		_primitiveCount = count;
+
+		glGenVertexArrays(1, &_vao);
+		glBindVertexArray(_vao);
+
+		glGenBuffers(1, &_vbo);
+
+		glBindBuffer(GL_ARRAY_BUFFER, _vbo);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(T) * count, _data, GL_STATIC_DRAW);
+
+
+		for (int i = 0; i < _elements.size(); i++)
+		{
+
+			glVertexAttribPointer
+			(
+				_elements[i]._atribNumber,
+				_elements[i]._size,
+				_elements[i]._type,
+				_elements[i]._normalized,
+				_elements[i]._stride,
+				_elements[i]._offset
+			);
+			glEnableVertexAttribArray(_elements[i]._atribNumber);
+		}
+
+	};
+
+	template <typename K>
+	void SetIndexedData(K* _data, GLuint* _indices, int primCount, int indexCount)
+	{
+		_primitiveCount = primCount;
+		_indexCount = indexCount;
+
+		glGenVertexArrays(1, &_vao);
+		glBindVertexArray(_vao);
+
+		glGenBuffers(1, &_vbo);
+
+		glBindBuffer(GL_ARRAY_BUFFER, _vbo);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(K) * primCount, _data, GL_STATIC_DRAW);
+
+
+		for (int i = 0; i < _elements.size(); i++)
+		{
+
+			glVertexAttribPointer
+			(
+				_elements[i]._atribNumber,
+				_elements[i]._size,
+				_elements[i]._type,
+				_elements[i]._normalized,
+				_elements[i]._stride,
+				_elements[i]._offset
+			);
+			glEnableVertexAttribArray(_elements[i]._atribNumber);
+		}
+
+		glGenBuffers(1, &_ibo);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _ibo);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * indexCount, _indices, GL_STATIC_DRAW);
+	};
+
+	void Render(GLenum type);
+	void RenderIndexed(GLenum type);
+
 };
 
 

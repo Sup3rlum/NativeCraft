@@ -52,7 +52,7 @@
     <ClCompile Include="VisibilityMesh.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
-    <ClCompile Include="Block.cpp">
+    <ClCompile Include="Vertex.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,7 +94,7 @@
     <ClInclude Include="VisibilityMesh.h">
       <Filter>Source\World</Filter>
     </ClInclude>
-    <ClInclude Include="Block.h">
+    <ClInclude Include="Vertex.h">
       <Filter>Source\World</Filter>
     </ClInclude>
   </ItemGroup>

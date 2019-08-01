@@ -5,6 +5,8 @@
 #include "FrameTime.h"
 #include "ContextParameters.h"
 
+
+
 using namespace glm;
 
 class Camera
@@ -29,7 +31,7 @@ public:
 
 	void Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* _frTime);
 
-	float mouseSpeed = 0.03f;
-	float flySpeed = 2.0f;
+	float mouseSpeed = 0.3f;
+	float flySpeed = 10.0f;
 };
 

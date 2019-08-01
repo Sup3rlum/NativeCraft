@@ -13,8 +13,8 @@ int main()
 	_contextParams->contextMinorVersion = 5;
 	_contextParams->contextProfile = GLFW_OPENGL_CORE_PROFILE;
 	_contextParams->contextCompatibility = GL_TRUE;
-	_contextParams->width = 1280;
-	_contextParams->height = 720;
+	_contextParams->width = 2560;
+	_contextParams->height = 1440;
 
 	Context::Initialize(_contextParams);
 }

@@ -2,6 +2,7 @@
 
 #include "nchfx.h"
 #include "VertexBuffer.h"
+#include "Vertex.h"
 
 using namespace glm;
 using namespace std;
@@ -13,11 +14,16 @@ public:
 	VisibilityMesh();
 	~VisibilityMesh();
 
-	void Compute(/*const int*** data*/);
+	void Compute(unsigned int data[16][256][16]);
 	void Modify();
 
-	vector<vec3> _positions;
-	vector<vec3> _sides;
+	void AddSide(int sideIndex, vec3 offset);
+
+	void Render();
+
+	vector<Vertex> _vData;
+	vector<unsigned int> _iData;
+
 
 	GLuint meshSize;
 

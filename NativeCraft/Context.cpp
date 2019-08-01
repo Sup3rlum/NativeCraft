@@ -25,7 +25,6 @@ int Context::Initialize(ContextParameters* _params)
 		_frameTime->DeltaTime = glfwGetTime() - _frameTime->TotalTime;
 		_frameTime->TotalTime = glfwGetTime();
 
-		glCullFace(GL_FRONT_AND_BACK);
 		glEnable(GL_DEPTH_TEST);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -86,7 +85,7 @@ int Context::InitGLFW()
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT,		_contextParameters->contextCompatibility);
 	glfwWindowHint(GLFW_OPENGL_PROFILE,				_contextParameters->contextProfile);
 
-	_window = glfwCreateWindow(_contextParameters->width, _contextParameters->height, "NativeCraft", NULL, NULL);
+	_window = glfwCreateWindow(_contextParameters->width, _contextParameters->height, "NativeCraft", glfwGetPrimaryMonitor(), NULL);
 
 	if (_window == NULL)
 	{
@@ -96,6 +95,8 @@ int Context::InitGLFW()
 	}
 
 	glfwMakeContextCurrent(_window);
+
+	glfwSwapInterval(0);
 
 	glfwSetInputMode(_window, GLFW_STICKY_KEYS, GL_TRUE);
 	glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
