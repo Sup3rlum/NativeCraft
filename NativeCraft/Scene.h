@@ -4,6 +4,7 @@
 #include "Camera.h"
 #include "Shader.h"
 #include "Chunk.h"
+#include "World.h"
 
 class Scene
 {
@@ -14,9 +15,11 @@ public:
 	void Update(GLFWwindow* _win, ContextParameters* _params, FrameTime* _frTime);
 	void Render(FrameTime* _frTime);
 
-	Shader* _shader;
-	Chunk* _chunk;
+	World* _world;
 	Camera* _camera;
+	Chunk* _chunk;
+
 	Texture* _texture;
+	Shader* _shader;
 };
 

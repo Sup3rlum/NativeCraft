@@ -84,7 +84,7 @@ VisibilityMesh::VisibilityMesh()
 
 }
 
-void VisibilityMesh::Compute(unsigned int _data[16][256][16])
+void VisibilityMesh::Compute(unsigned int _data[16][256][16], vec2 _grid)
 {
 	for (int i = 0; i < 16; i++)
 	{
@@ -94,12 +94,31 @@ void VisibilityMesh::Compute(unsigned int _data[16][256][16])
 			{
 				if (_data[i][j][k] != 0)
 				{
-					AddSide(0, vec3(i, j, k));
-					AddSide(1, vec3(i, j, k));
-					AddSide(2, vec3(i, j, k));
-					AddSide(3, vec3(i, j, k));
-					AddSide(4, vec3(i, j, k));
-					AddSide(5, vec3(i, j, k));
+					if (k > 0 && _data[i][j][k - 1] == 0 || k == 0)
+					{
+						AddSide(0, vec3(i, j, k));
+					}
+					if (k < 15 && _data[i][j][k + 1] == 0 || k == 15)
+					{
+						AddSide(1, vec3(i, j, k));
+					}
+					if (j > 0 && _data[i][j - 1][k] == 0 || j == 0)
+					{
+						AddSide(2, vec3(i, j, k));
+					}
+					if (j < 255 && _data[i][j + 1][k] == 0 || j == 255)
+					{
+
+						AddSide(3, vec3(i, j, k));
+					}
+					if (i > 0 && _data[i - 1][j][k] == 0 || i == 0)
+					{
+						AddSide(4, vec3(i, j, k));
+					}
+					if (i < 15 && _data[i + 1][j][k] == 0 || i == 15)
+					{
+						AddSide(5, vec3(i, j, k));
+					}
 				}
 			}
 		}
@@ -116,7 +135,7 @@ void VisibilityMesh::AddSide(int sideIndex, vec3 offset)
 
 	for (int z = sideIndex*4; z < (sideIndex+1)*4; z++)
 	{
-		_vData.push_back(Vertex(offset + _vertices[z], vec3(1, 1, 1), uvs[z % 4]));
+		_vData.push_back(Vertex(offset + _vertices[z], normals[sideIndex], uvs[z % 4]));
 	}
 
 }

@@ -11,8 +11,7 @@ class Chunk
 {
 public:
 
-	Chunk(ivec2 position);
-	~Chunk();
+	Chunk(Texture* _height, vec2 position);
 
 	void Render(FrameTime* _frTime);
 	void Update(FrameTime* _frTime);
@@ -23,7 +22,7 @@ public:
 
 	VisibilityMesh* _mesh;
 
-	ivec2 GridPosition;
+	vec2 GridPosition;
 	mat4x4 World;
 };
 

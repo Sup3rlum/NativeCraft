@@ -6,7 +6,7 @@ Camera::Camera()
 	horizontalAngle = -half_pi<float>();
 	verticalAngle = -quarter_pi<float>();
 
-	Projection = perspective(radians(Fov), 16.0f / 9.0f, 0.1f, 100.0f);
+	Projection = perspective(radians(Fov), 16.0f / 9.0f, 0.1f, 10000.0f);
 
 	Position = vec3(40.0f, 40.0f, 40.0f);
 }
@@ -19,11 +19,11 @@ void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* 
 {
 	if (verticalAngle > half_pi<float>() - 0.1f)
 	{
-		verticalAngle = half_pi<float>();
+		verticalAngle = half_pi<float>() - 0.1f;
 	}
 	else if (verticalAngle < -half_pi<float>() + 0.1f)
 	{
-		verticalAngle = -half_pi<float>();
+		verticalAngle = -half_pi<float>() + 0.1f;
 	}
 
 	double xpos, ypos;
@@ -35,8 +35,8 @@ void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* 
 		_params->width / 2.0, 
 		_params->height / 2.0);
 
-	horizontalAngle += mouseSpeed * _frTime->DeltaTime * (_params->width / 2.0 - xpos);
-	verticalAngle	+= mouseSpeed * _frTime->DeltaTime * (_params->height / 2.0 - ypos);
+	horizontalAngle += mouseSpeed /** _frTime->DeltaTime*/* 0.003f * (_params->width / 2.0 - xpos);
+	verticalAngle	+= mouseSpeed /** _frTime->DeltaTime*/* 0.003f * (_params->height / 2.0 - ypos);
 
 	Target = vec3
 	(

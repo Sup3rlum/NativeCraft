@@ -206,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\dirt.jpg" />
+    <Image Include="textures\heightmap.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

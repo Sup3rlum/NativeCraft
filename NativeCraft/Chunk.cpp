@@ -1,7 +1,7 @@
 #include "Chunk.h"
 
 
-Chunk::Chunk(ivec2 _pos)
+Chunk::Chunk(Texture* _height, vec2 _pos)
 {
 	GridPosition = _pos;
 
@@ -12,7 +12,9 @@ Chunk::Chunk(ivec2 _pos)
 		{
 			for (int k = 0; k < 16; k++)
 			{
-				if (i + j + k > 60)
+				float b = _height->GetData(i + _pos.x*16, k + _pos.y*16).x / 4 + 20;
+
+				if (j > b)
 				{
 					_data[i][j][k] = 0;
 				}
@@ -25,7 +27,8 @@ Chunk::Chunk(ivec2 _pos)
 	}
 
 	_mesh = new VisibilityMesh();
-	_mesh->Compute(_data);
+	_mesh->Compute(_data, _pos);
+
 }
 
 void Chunk::Render(FrameTime* _frTime)

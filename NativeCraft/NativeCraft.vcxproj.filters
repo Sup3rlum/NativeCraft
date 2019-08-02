@@ -128,5 +128,8 @@
     <Image Include="textures\dirt.jpg">
       <Filter>textures</Filter>
     </Image>
+    <Image Include="textures\heightmap.png">
+      <Filter>textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

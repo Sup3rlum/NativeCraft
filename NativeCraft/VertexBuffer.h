@@ -87,6 +87,14 @@ public:
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _ibo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * indexCount, _indices, GL_STATIC_DRAW);
+
+
+		GLint size = 0;
+
+		glBindBuffer(GL_ARRAY_BUFFER, _vbo);
+		glGetBufferParameteriv(GL_ARRAY_BUFFER, GL_BUFFER_SIZE, &size);
+
+		cout << size << endl;
 	};
 
 	void Render(GLenum type);

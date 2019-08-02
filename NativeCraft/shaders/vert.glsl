@@ -6,11 +6,14 @@ layout(location = 2) in vec2 texCoord;
 
 uniform mat4x4 View;
 uniform mat4x4 Projection;
+uniform mat4x4 World;
 
 out vec2 fTexCoord;
+out vec3 fNormal;
 
 void main() 
 {
-    gl_Position = Projection * View * vec4(position + normal, 1.0f);
+    gl_Position = Projection * View * World	* vec4(position, 1.0f);
 	fTexCoord = texCoord;
+	fNormal = normal;
 } 
