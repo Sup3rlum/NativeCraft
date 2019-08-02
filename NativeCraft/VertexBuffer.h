@@ -94,7 +94,6 @@ public:
 		glBindBuffer(GL_ARRAY_BUFFER, _vbo);
 		glGetBufferParameteriv(GL_ARRAY_BUFFER, GL_BUFFER_SIZE, &size);
 
-		cout << size << endl;
 	};
 
 	void Render(GLenum type);

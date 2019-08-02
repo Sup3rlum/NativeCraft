@@ -25,7 +25,7 @@ public:
 	Chunk* _chunk;
 
 
-	void Render(Camera* _camera, FrameTime* _frTime);
+	void Render(Shader* _shader, Camera* _camera, FrameTime* _frTime);
 	void Update(FrameTime* _frTime);
 };
 

@@ -135,6 +135,27 @@
     <None Include="shaders\renderbatch.vert">
       <Filter>shaders</Filter>
     </None>
+    <None Include="shaders\ssao_blur.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao_blur.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao_geom.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao_geom.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao_light.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao_light.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao.frag">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\dirt.jpg">

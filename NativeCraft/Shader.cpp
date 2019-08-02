@@ -174,6 +174,11 @@ void Shader::SetVector(const string& name, vec4 val)
 }
 void Shader::SetTexture(GLuint _id, Texture* _tex)
 {
-	glActiveTexture(GL_TEXTURE0);
+	glActiveTexture(GL_TEXTURE0 + _id);
 	glBindTexture(GL_TEXTURE_2D, _tex->_handle);
+}
+void Shader::SetTexture(GLuint _id, GLuint tex)
+{
+	glActiveTexture(GL_TEXTURE0 + _id);
+	glBindTexture(GL_TEXTURE_2D, tex);
 }

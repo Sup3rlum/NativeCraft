@@ -32,5 +32,6 @@ public:
 	void SetInt(const string& name, int val);
 
 	void SetTexture(GLuint _id, Texture* _texture);
+	void SetTexture(GLuint _id, GLuint tex);
 };
 

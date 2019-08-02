@@ -17,6 +17,7 @@ public:
 	RenderBatch(ContextParameters* _context);
 
 	void DrawTexture(Texture* _tex, float x, float y, float width, float height);
+	void DrawTexture(GLuint _tex, float x, float y, float width, float height);
 
 
 	Shader* _shader;

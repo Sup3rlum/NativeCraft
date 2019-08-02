@@ -19,15 +19,15 @@ World::World()
 
 }
 
-void World::Render(Camera* _camera, FrameTime* _frTime)
+void World::Render(Shader* _shader, Camera* _camera, FrameTime* _frTime)
 {
-	_shader->UseProgram();
+	/*_shader->UseProgram();
 
 	_shader->SetMatrix("View", _camera->View);
 	_shader->SetMatrix("Projection", _camera->Projection);
-	_shader->SetVector("LightDirection", vec3(-1, -1, -1));
-	_shader->SetTexture(0, _texture);
+	_shader->SetVector("LightDirection", vec3(-1, -1, -1));*/
 
+	_shader->SetTexture(0, _texture);
 
 	for (int i = 0; i < _loadedChunks.size(); i++)
 	{

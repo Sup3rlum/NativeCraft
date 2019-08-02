@@ -206,6 +206,13 @@
     <None Include="shaders\geom.glsl" />
     <None Include="shaders\renderbatch.frag" />
     <None Include="shaders\renderbatch.vert" />
+    <None Include="shaders\ssao.frag" />
+    <None Include="shaders\ssao_blur.frag" />
+    <None Include="shaders\ssao_blur.vert" />
+    <None Include="shaders\ssao_geom.frag" />
+    <None Include="shaders\ssao_geom.vert" />
+    <None Include="shaders\ssao_light.frag" />
+    <None Include="shaders\ssao_light.vert" />
     <None Include="shaders\vert.glsl" />
   </ItemGroup>
   <ItemGroup>
