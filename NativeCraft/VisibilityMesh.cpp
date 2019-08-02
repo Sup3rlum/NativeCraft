@@ -73,14 +73,7 @@ vec3 normals[6] =
 
 VisibilityMesh::VisibilityMesh()
 {
-	vector<VertexElements> _elements;
-
-
-	_elements.push_back(VertexElements(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0));
-	_elements.push_back(VertexElements(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float))));
-	_elements.push_back(VertexElements(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float))));
-
-	_vBuffer = new VertexBuffer(_elements);
+	_vBuffer = new VertexBuffer(VertexNormalTexture::Elements);
 
 }
 
@@ -124,7 +117,7 @@ void VisibilityMesh::Compute(unsigned int _data[16][256][16], vec2 _grid)
 		}
 	}
 
-	_vBuffer->SetIndexedData<Vertex>(_vData.data(), _iData.data(), _vData.size(), _iData.size());
+	_vBuffer->SetIndexedData<VertexNormalTexture>(_vData.data(), _iData.data(), _vData.size(), _iData.size());
 }
 void VisibilityMesh::AddSide(int sideIndex, vec3 offset)
 {
@@ -135,7 +128,7 @@ void VisibilityMesh::AddSide(int sideIndex, vec3 offset)
 
 	for (int z = sideIndex*4; z < (sideIndex+1)*4; z++)
 	{
-		_vData.push_back(Vertex(offset + _vertices[z], normals[sideIndex], uvs[z % 4]));
+		_vData.push_back(VertexNormalTexture(offset + _vertices[z], normals[sideIndex], uvs[z % 4]));
 	}
 
 }

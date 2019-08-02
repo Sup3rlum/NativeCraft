@@ -1,8 +1,10 @@
 #include "Scene.h"
 
 
-Scene::Scene()
+Scene::Scene(ContextParameters* params)
 {
+	_params = params;
+
 	_camera = new Camera();
 
 	_shader = new Shader("./shaders/vert.glsl", "./shaders/frag.glsl");
@@ -12,9 +14,11 @@ Scene::Scene()
 	_texture = new Texture("./textures/dirt.jpg");
 
 	_world = new World();
+
+	_rb = new RenderBatch(params);
 }
 
-void Scene::Update(GLFWwindow* _win, ContextParameters* _params, FrameTime* _frTime)
+void Scene::Update(GLFWwindow* _win, FrameTime* _frTime)
 {
 	_camera->Update(_win, _params, _frTime);
 }
@@ -23,12 +27,6 @@ void Scene::Render(FrameTime* _frTime)
 
 	_world->Render(_camera, _frTime);
 
-	/*/_shader->UseProgram();
-
-	_shader->SetMatrix("View", _camera->View);
-	_shader->SetMatrix("Projection", _camera->Projection);
-	_shader->SetTexture(0, _texture);
-
-	_chunk->Render(_frTime);*/
+	_rb->DrawTexture(_texture, 100, 100, 1280, 720);
 
 }

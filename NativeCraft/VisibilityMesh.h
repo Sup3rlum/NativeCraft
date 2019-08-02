@@ -21,7 +21,7 @@ public:
 
 	void Render();
 
-	vector<Vertex> _vData;
+	vector<VertexNormalTexture> _vData;
 	vector<unsigned int> _iData;
 
 	GLuint meshSize;

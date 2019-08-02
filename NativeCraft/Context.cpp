@@ -17,7 +17,7 @@ int Context::Initialize(ContextParameters* _params)
 	InitGLEW();
 
 	_frameTime = new FrameTime();
-	_scene = new Scene();
+	_scene = new Scene(_params);
 
 	// Main Loop
 	do
@@ -49,7 +49,7 @@ void Context::Frame(FrameTime* _frTime)
 }
 void Context::Update(FrameTime* _frTime)
 {
-	_scene->Update(_window, _contextParameters, _frameTime);
+	_scene->Update(_window, _frameTime);
 }
 
 int Context::InitGLEW()
@@ -89,7 +89,7 @@ int Context::InitGLFW()
 
 	if (_window == NULL)
 	{
-		fprintf(stderr, "OpenGL 3.3 is not supported by this PC");
+		fprintf(stderr, "OpenGL 4.5 is not supported by this PC");
 		glfwTerminate();
 		return -1;
 	}

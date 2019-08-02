@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="RenderBatch.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chunk.cpp" />
@@ -181,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math.h" />
+    <ClInclude Include="RenderBatch.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chunk.h" />
@@ -202,6 +204,8 @@
     <None Include="shaders\debug_vert.glsl" />
     <None Include="shaders\frag.glsl" />
     <None Include="shaders\geom.glsl" />
+    <None Include="shaders\renderbatch.frag" />
+    <None Include="shaders\renderbatch.vert" />
     <None Include="shaders\vert.glsl" />
   </ItemGroup>
   <ItemGroup>

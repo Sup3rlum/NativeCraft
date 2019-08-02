@@ -5,21 +5,26 @@
 #include "Shader.h"
 #include "Chunk.h"
 #include "World.h"
+#include "RenderBatch.h"
+
 
 class Scene
 {
 public:
-	Scene();
+	Scene(ContextParameters* params);
 	~Scene();
 
-	void Update(GLFWwindow* _win, ContextParameters* _params, FrameTime* _frTime);
+	void Update(GLFWwindow* _win, FrameTime* _frTime);
 	void Render(FrameTime* _frTime);
 
 	World* _world;
 	Camera* _camera;
-	Chunk* _chunk;
+
+	RenderBatch* _rb;
 
 	Texture* _texture;
 	Shader* _shader;
+
+	ContextParameters* _params;
 };
 

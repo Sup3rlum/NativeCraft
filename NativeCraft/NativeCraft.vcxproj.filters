@@ -58,6 +58,9 @@
     <ClCompile Include="World.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
+    <ClCompile Include="RenderBatch.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -106,6 +109,9 @@
     <ClInclude Include="Math.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="RenderBatch.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl">
@@ -121,6 +127,12 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\debug_vert.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\renderbatch.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\renderbatch.vert">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>
