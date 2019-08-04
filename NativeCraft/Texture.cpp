@@ -18,11 +18,44 @@ Texture::Texture(const char* _path)
 	glGenerateMipmap(GL_TEXTURE_2D);
 
 }
+
+Texture::Texture(GLuint width, GLuint height, GLint colorFormat, GLint dataFormat, bool mimmaps)
+{
+	_width = width;
+	_height = height;
+
+	_colorFormat = colorFormat;
+	_dataFormat = dataFormat;
+
+	glGenTextures(1, &_handle);
+	glBindTexture(GL_TEXTURE_2D, _handle);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, _colorFormat, width, height, 0, GL_RGB, _dataFormat, NULL);
+
+	if (mimmaps)
+	{
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+
+}
+void Texture::SetParameter(GLenum _n, GLenum _v)
+{
+	glTexParameteri(GL_TEXTURE_2D, _n, _v);
+}
+
+void Texture::Bind()
+{
+	glBindTexture(GL_TEXTURE_2D, _handle);
+}
+void Texture::Unbind()
+{
+	glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+
 vec4 Texture::GetData(int x, int y)
 {
-	unsigned char* _offs = _dataInternal + (x + _height * y) * 4;
-
-
+	unsigned char* _offs = (unsigned char*)_dataInternal + (x + _height * y) * 4;
 
 	return vec4
 	(

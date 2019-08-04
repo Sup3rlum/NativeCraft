@@ -6,7 +6,7 @@
 #include "Chunk.h"
 #include "World.h"
 #include "RenderBatch.h"
-
+#include "FrameBuffer.h"
 
 class Scene
 {
@@ -22,6 +22,7 @@ public:
 
 	RenderBatch* _rb;
 
+	Shader* _ImmShader;
 
 	Shader* _ssaoGeom;
 	Shader* _ssaoLight;
@@ -30,8 +31,21 @@ public:
 
 	ContextParameters* _params;
 
+	FrameBuffer* _gBuffer;
+	FrameBuffer* _ssaoBuffer;
+	FrameBuffer* _ssaoBufferBlur;
+
+	Texture* _tPosition;
+	Texture* _tNormal;
+	Texture* _tAlbedo;
+
+	Texture* _noiseTexture;
+
+	Texture* _tSsao;
+	Texture* _tSsaoBlur;
 
 
+	mat4x4 _mTransforms;
 
 
 	unsigned int ssaoFBO, ssaoBlurFBO;

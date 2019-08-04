@@ -27,9 +27,6 @@ int Context::Initialize(ContextParameters* _params)
 
 		glEnable(GL_DEPTH_TEST);
 
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glClearColor(0.1f, 0.5f, 1.0f, 1.0f);
-
 
 		Update(_frameTime);
 		Frame(_frameTime);

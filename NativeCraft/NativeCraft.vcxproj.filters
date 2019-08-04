@@ -61,6 +61,7 @@
     <ClCompile Include="RenderBatch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="FrameBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -112,6 +113,7 @@
     <ClInclude Include="RenderBatch.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="FrameBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl">
@@ -154,6 +156,9 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\ssao.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssao.vert">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

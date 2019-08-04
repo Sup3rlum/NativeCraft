@@ -10,10 +10,28 @@ class Texture
 public:
 
 	Texture(const char* filepath);
+	Texture(GLuint with, GLuint height, GLint _colorFormat, GLint dataFormat, bool mimmap);
+
+	void SetParameter(GLenum name, GLenum param);
+
+	void Bind();
+	void Unbind();
+
+	template<typename T>
+	void SetData(T* _data)
+	{
+		_dataInternal = _data;
+
+		glBindTexture(GL_TEXTURE_2D, _handle);
+		glTexImage2D(GL_TEXTURE_2D, 0, _colorFormat, _width, _height, 0, GL_RGB, _dataFormat, _dataInternal);
+	}
 
 	GLuint _handle;
 
-	unsigned char* _dataInternal;
+	GLint _colorFormat;
+	GLint _dataFormat;
+
+	void* _dataInternal;
 
 	int _width;
 	int _height;
