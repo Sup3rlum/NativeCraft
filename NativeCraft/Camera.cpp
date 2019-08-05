@@ -6,7 +6,8 @@ Camera::Camera()
 	horizontalAngle = -half_pi<float>();
 	verticalAngle = -quarter_pi<float>();
 
-	Projection = perspective(radians(Fov), 16.0f / 9.0f, 0.1f, 10000.0f);
+	Projection = perspective(radians(Fov), 16.0f / 9.0f, 0.1f, 1000.0f);
+	ProjectionInverse = inverse(Projection);
 
 	Position = vec3(40.0f, 40.0f, 40.0f);
 }

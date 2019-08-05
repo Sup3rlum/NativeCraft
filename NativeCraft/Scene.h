@@ -44,6 +44,7 @@ public:
 	Texture* _tSsao;
 	Texture* _tSsaoBlur;
 
+	Texture* _sampleTex;
 
 	mat4x4 _mTransforms;
 

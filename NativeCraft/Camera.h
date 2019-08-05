@@ -19,6 +19,7 @@ public:
 
 	mat4x4 View;
 	mat4x4 Projection;
+	mat4x4 ProjectionInverse;
 	vec3 Position;
 	vec3 Target;
 	vec3 Right;

@@ -19,18 +19,19 @@ Texture::Texture(const char* _path)
 
 }
 
-Texture::Texture(GLuint width, GLuint height, GLint colorFormat, GLint dataFormat, bool mimmaps)
+Texture::Texture(GLuint width, GLuint height, GLint colorFormat, GLint outerColorFormat, GLint dataFormat, bool mimmaps)
 {
 	_width = width;
 	_height = height;
 
 	_colorFormat = colorFormat;
+	_outerColorFormat = outerColorFormat;
 	_dataFormat = dataFormat;
 
 	glGenTextures(1, &_handle);
 	glBindTexture(GL_TEXTURE_2D, _handle);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, _colorFormat, width, height, 0, GL_RGB, _dataFormat, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, _colorFormat, width, height, 0, _outerColorFormat, _dataFormat, NULL);
 
 	if (mimmaps)
 	{

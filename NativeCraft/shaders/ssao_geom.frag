@@ -17,5 +17,5 @@ void main()
 
     gNormal = (normalize(Normal)+1.0f) / 2.0f;
 
-    gAlbedo = vec3(1.0f);//texture(Texture, TexCoords).rgb;
+    gAlbedo = texture(Texture, TexCoords).rgb;
 }
