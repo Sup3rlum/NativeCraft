@@ -18,6 +18,8 @@ void main()
     vec3 FragPos = texture(gPosition, TexCoords).rgb;
     vec3 Normal =  texture(gNormal, TexCoords).rgb * 2.0 - 1.0;
     vec3 Albedo = texture(gAlbedo, TexCoords).rgb;
+
+
 	float AmbientOcclusion = texture(ssao, TexCoords).r;
     
     // then calculate lighting as usual

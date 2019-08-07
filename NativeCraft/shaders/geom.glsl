@@ -1,74 +1,44 @@
-#version 330
+#version 450
 
-layout(points) in;
-layout(triangle_strip, max_vertices = 5) out;
+layout(triangles) in;
+layout(triangle_strip, max_vertices = 3) out;
 
-in float gData[];
+in vec2 gTexCoord[];
+in vec3 gNormal[];
 
-out vec2 texCoord;
-
-uniform mat4 View;
-uniform mat4 Projection;
-
-vec3 vertices[24] = vec3[]
-(
-
-	// Z		0
-	vec3(0.0f,	0.0f,	0.0f),
-	vec3(1.0f,	0.0f,	0.0f),
-	vec3(0.0f,	1.0f,	0.0f),
-	vec3(1.0f,	1.0f,	0.0f),
-
-	// Z'		1
-	vec3(0.0f,	0.0f,	1.0f),
-	vec3(1.0f,	0.0f,	1.0f),
-	vec3(0.0f,	1.0f,	1.0f),
-	vec3(1.0f,	1.0f,	1.0f),
-
-	// Y		2
-	vec3(0.0f,	0.0f,	0.0f),
-	vec3(1.0f,	0.0f,	0.0f),
-	vec3(0.0f,	0.0f,	1.0f),
-	vec3(1.0f,	0.0f,	1.0f),
-
-	// Y'		3
-	vec3(0.0f,	1.0f,	0.0f),
-	vec3(1.0f,	1.0f,	0.0f),
-	vec3(0.0f,	1.0f,	1.0f),
-	vec3(1.0f,	1.0f,	1.0f),
-
-	// X		4
-	vec3(0.0f,  0.0f,	0.0f),
-	vec3(0.0f,  1.0f,	0.0f),
-	vec3(0.0f,  0.0f,	1.0f),
-	vec3(0.0f,  1.0f,	1.0f),
-
-	// X'		5
-	vec3(1.0f,  0.0f,	0.0f),
-	vec3(1.0f,  1.0f,	0.0f),
-	vec3(1.0f,  0.0f,	1.0f),
-	vec3(1.0f,  1.0f,	1.0f)
-);
-
-vec2 uvs[4] = vec2[]
-(
-	vec2(1.0f, 0.0f),
-	vec2(1.0f, 1.0f),
-	vec2(0.0f, 0.0f),
-	vec2(0.0f, 1.0f)
-
-);			
-
-
+out vec2 fTexCoord;
+out vec3 fNormal;
 
 void main() 
 {
-	for (int i = 0; i < 4; i++)
-	{
-		gl_Position = Projection * View * (gl_in[0].gl_Position + vec4(vertices[i+int(gData[0])*4],0));
-		texCoord = uvs[i];
-		EmitVertex();
-	}
+	/*vec4 first = gl_in[0].gl_Position;
+	vec4 second = gl_in[1].gl_Position;
+	vec4 third = gl_in[2].gl_Position;
 
-	EndPrimitive();
+	first /= first.w;
+	second /= second.w;
+	third /= third.w;
+
+	vec2 center = (first + second + third).xy / 3;
+
+	if (center.x < 1 && center.x > -1 && center.y < 1 && center.y > -1)
+	{*/
+		gl_Position = gl_in[0].gl_Position;
+		fTexCoord = gTexCoord[0];
+		fNormal = gNormal[0];
+		EmitVertex();
+
+		gl_Position = gl_in[1].gl_Position;
+		fTexCoord = gTexCoord[1];
+		fNormal = gNormal[1];
+		EmitVertex();
+
+		gl_Position = gl_in[2].gl_Position;
+		fTexCoord = gTexCoord[2];
+		fNormal = gNormal[2];
+		EmitVertex();
+
+		EndPrimitive();
+	//}
+
 }

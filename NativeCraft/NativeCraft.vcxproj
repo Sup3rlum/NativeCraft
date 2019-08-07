@@ -163,7 +163,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BoundingBox.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
+    <ClCompile Include="ColumnFrustum.cpp" />
     <ClCompile Include="RenderBatch.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -182,7 +184,9 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="FrameBuffer.h" />
+    <ClInclude Include="ColumnFrustum.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="RenderBatch.h" />
     <ClInclude Include="Vertex.h" />
@@ -205,6 +209,7 @@
     <None Include="shaders\debug_frag.glsl" />
     <None Include="shaders\debug_vert.glsl" />
     <None Include="shaders\frag.glsl" />
+    <None Include="shaders\def_geom.glsl" />
     <None Include="shaders\geom.glsl" />
     <None Include="shaders\renderbatch.frag" />
     <None Include="shaders\renderbatch.vert" />

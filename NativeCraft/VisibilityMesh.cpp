@@ -1,13 +1,8 @@
 #include "VisibilityMesh.h"
 
-GLuint _indices[36] =
+GLuint _indices[6] =
 {
-	0,1,2,		0,2,3, 
-	4,5,6,		4,6,7,
-	8,9,10,		8,10,11,
-	12,13,14,	12,14,15,
-	16,17,18,	16,18,19,
-	20,21,22,	20,22,23
+	0,1,2,	0,2,3
 };
 
 
@@ -20,10 +15,10 @@ vec3 _vertices[24] =
 	vec3(0.0f, 1.0f, 0.0f),
 	
 	// Z'		1
-	vec3(0.0f, 0.0f, 1.0f),
-	vec3(1.0f, 0.0f, 1.0f),
-	vec3(1.0f, 1.0f, 1.0f),
 	vec3(0.0f, 1.0f, 1.0f),
+	vec3(1.0f, 1.0f, 1.0f),
+	vec3(1.0f, 0.0f, 1.0f),
+	vec3(0.0f, 0.0f, 1.0f),
 	
 	// Y		2
 	vec3(0.0f, 0.0f, 0.0f),
@@ -44,10 +39,10 @@ vec3 _vertices[24] =
 	vec3(0.0f, 0.0f, 1.0f),
 	
 	// X'		5
-	vec3(1.0f, 0.0f, 0.0f),
-	vec3(1.0f, 1.0f, 0.0f),
+	vec3(1.0f, 0.0f, 1.0f),
 	vec3(1.0f, 1.0f, 1.0f),
-	vec3(1.0f, 0.0f, 1.0f)
+	vec3(1.0f, 1.0f, 0.0f),
+	vec3(1.0f, 0.0f, 0.0f)
 };
 
 vec2 uvs[4] =
@@ -56,7 +51,6 @@ vec2 uvs[4] =
 	vec2(1.0f, 1.0f),
 	vec2(0.0f, 1.0f),
 	vec2(0.0f, 0.0f)
-
 
 };
 
@@ -118,6 +112,7 @@ void VisibilityMesh::Compute(unsigned int _data[16][256][16], vec2 _grid)
 	}
 
 	_vBuffer->SetIndexedData<VertexNormalTexture>(_vData.data(), _iData.data(), _vData.size(), _iData.size());
+
 }
 void VisibilityMesh::AddSide(int sideIndex, vec3 offset)
 {

@@ -24,6 +24,7 @@ public:
 	vector<VertexNormalTexture> _vData;
 	vector<unsigned int> _iData;
 
+
 	GLuint meshSize;
 
 	VertexBuffer* _vBuffer;

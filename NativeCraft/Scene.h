@@ -24,40 +24,8 @@ public:
 
 	Shader* _ImmShader;
 
-	Shader* _ssaoGeom;
-	Shader* _ssaoLight;
-	Shader* _ssao;
-	Shader* _ssaoBlur;
 
 	ContextParameters* _params;
 
-	FrameBuffer* _gBuffer;
-	FrameBuffer* _ssaoBuffer;
-	FrameBuffer* _ssaoBufferBlur;
-
-	Texture* _tPosition;
-	Texture* _tNormal;
-	Texture* _tAlbedo;
-
-	Texture* _noiseTexture;
-
-	Texture* _tSsao;
-	Texture* _tSsaoBlur;
-
-	Texture* _sampleTex;
-
-	mat4x4 _mTransforms;
-
-
-	unsigned int ssaoFBO, ssaoBlurFBO;
-	unsigned int ssaoColorBuffer, ssaoColorBufferBlur;
-	unsigned int rboDepth;
-	unsigned int attachments[3] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2 };
-	unsigned int gPosition, gNormal, gAlbedo;
-	unsigned int gBuffer;
-
-	unsigned int noiseTexture; 
-
-	vector<glm::vec3> ssaoKernel;
 };
 

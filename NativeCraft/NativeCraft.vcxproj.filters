@@ -45,7 +45,6 @@
     <ClCompile Include="VertexElements.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="Texture.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -61,7 +60,18 @@
     <ClCompile Include="RenderBatch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="FrameBuffer.cpp" />
+    <ClCompile Include="FrameBuffer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ColumnFrustum.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -94,7 +104,6 @@
     <ClInclude Include="VertexElements.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h">
       <Filter>Source</Filter>
     </ClInclude>
@@ -113,16 +122,24 @@
     <ClInclude Include="RenderBatch.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="FrameBuffer.h" />
+    <ClInclude Include="FrameBuffer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBox.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="ColumnFrustum.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\frag.glsl">
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\vert.glsl">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="shaders\geom.glsl">
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\debug_frag.glsl">
@@ -159,6 +176,12 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\ssao.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\def_geom.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\geom.glsl">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>
