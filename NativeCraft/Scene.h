@@ -7,6 +7,7 @@
 #include "World.h"
 #include "RenderBatch.h"
 #include "FrameBuffer.h"
+#include "DebugView.h"
 
 class Scene
 {

@@ -73,4 +73,5 @@ void Camera::Update(GLFWwindow* _window, ContextParameters* _params, FrameTime* 
 	}
 
 	View = lookAt(Position, Position + Target, Up);
+	DebugView = lookAt(-Target * 15.0f, vec3(0), Up);
 }

@@ -12,7 +12,7 @@ Chunk::Chunk(Texture* _height, vec2 _pos)
 		{
 			for (int k = 0; k < 16; k++)
 			{
-				float b = _height->GetData(i + _pos.x*16, k + _pos.y*16).x / 4 + 20;
+				float b = _height->GetData(i + _pos.x*16, k + _pos.y*16).x / 3.1 + 20;
 
 				if (j > b)
 				{
@@ -29,6 +29,9 @@ Chunk::Chunk(Texture* _height, vec2 _pos)
 	_mesh = new VisibilityMesh();
 	_mesh->Compute(_data, _pos);
 
+	vec3 _pp = vec3(_pos.x, 0, _pos.y) * 16.0f;
+
+	_box = BoundingBox(_pp, _pp + vec3(16, 256, 16));
 }
 
 void Chunk::Render(FrameTime* _frTime)

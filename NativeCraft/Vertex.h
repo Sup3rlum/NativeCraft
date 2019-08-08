@@ -35,3 +35,17 @@ typedef struct VertexTexture
 
 	static vector<VertexElements> Elements;
 };
+
+typedef struct VertexColor
+{
+	vec3 _position;
+	vec3 _color;
+
+	VertexColor(vec3 pos, vec3 col)
+	{
+		_position = pos;
+		_color = col;
+	}
+
+	static vector<VertexElements> Elements;
+};

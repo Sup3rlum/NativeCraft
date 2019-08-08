@@ -12,6 +12,8 @@ Scene::Scene(ContextParameters* params)
 
 	_ImmShader = new Shader("./shaders/vert.glsl", "./shaders/geom.glsl", "./shaders/frag.glsl");
 
+	DebugView::Init();
+
 }
 
 void Scene::Update(GLFWwindow* _win, FrameTime* _frTime)
@@ -31,5 +33,5 @@ void Scene::Render(FrameTime* _frTime)
 
 	_world->Render(_ImmShader, _camera, _frTime);
 	
-
+	DebugView::Draw(_camera);
 }

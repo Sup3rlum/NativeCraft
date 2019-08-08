@@ -6,6 +6,7 @@
 #include "FrameTime.h"
 #include "Shader.h"
 #include "Camera.h"
+#include "Frustum.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ public:
 
 	Chunk* _chunk;
 
+	Frustum* _cf;
 
 	void Render(Shader* _shader, Camera* _camera, FrameTime* _frTime);
 	void Update(FrameTime* _frTime);

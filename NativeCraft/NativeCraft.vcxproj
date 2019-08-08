@@ -164,8 +164,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BoundingBox.cpp" />
+    <ClCompile Include="DebugView.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
-    <ClCompile Include="ColumnFrustum.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="RenderBatch.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -185,9 +187,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoundingBox.h" />
+    <ClInclude Include="DebugView.h" />
     <ClInclude Include="FrameBuffer.h" />
-    <ClInclude Include="ColumnFrustum.h" />
+    <ClInclude Include="Frustum.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="Plane.h" />
     <ClInclude Include="RenderBatch.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Camera.h" />
@@ -208,6 +212,8 @@
   <ItemGroup>
     <None Include="shaders\debug_frag.glsl" />
     <None Include="shaders\debug_vert.glsl" />
+    <None Include="shaders\debug_view.frag" />
+    <None Include="shaders\debug_view.vert" />
     <None Include="shaders\frag.glsl" />
     <None Include="shaders\def_geom.glsl" />
     <None Include="shaders\geom.glsl" />

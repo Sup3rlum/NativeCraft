@@ -18,6 +18,7 @@ public:
 	~Camera();
 
 	mat4x4 View;
+	mat4x4 DebugView;
 	mat4x4 Projection;
 	mat4x4 ProjectionInverse;
 	vec3 Position;

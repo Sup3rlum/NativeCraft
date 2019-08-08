@@ -69,7 +69,13 @@
     <ClCompile Include="BoundingBox.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ColumnFrustum.cpp">
+    <ClCompile Include="Plane.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugView.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -131,7 +137,13 @@
     <ClInclude Include="BoundingBox.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="ColumnFrustum.h">
+    <ClInclude Include="Plane.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugView.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -182,6 +194,12 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\geom.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\debug_view.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\debug_view.vert">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

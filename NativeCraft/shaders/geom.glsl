@@ -11,34 +11,20 @@ out vec3 fNormal;
 
 void main() 
 {
-	/*vec4 first = gl_in[0].gl_Position;
-	vec4 second = gl_in[1].gl_Position;
-	vec4 third = gl_in[2].gl_Position;
+	gl_Position = gl_in[0].gl_Position;
+	fTexCoord = gTexCoord[0];
+	fNormal = gNormal[0];
+	EmitVertex();
 
-	first /= first.w;
-	second /= second.w;
-	third /= third.w;
+	gl_Position = gl_in[1].gl_Position;
+	fTexCoord = gTexCoord[1];
+	fNormal = gNormal[1];
+	EmitVertex();
 
-	vec2 center = (first + second + third).xy / 3;
+	gl_Position = gl_in[2].gl_Position;
+	fTexCoord = gTexCoord[2];
+	fNormal = gNormal[2];
+	EmitVertex();
 
-	if (center.x < 1 && center.x > -1 && center.y < 1 && center.y > -1)
-	{*/
-		gl_Position = gl_in[0].gl_Position;
-		fTexCoord = gTexCoord[0];
-		fNormal = gNormal[0];
-		EmitVertex();
-
-		gl_Position = gl_in[1].gl_Position;
-		fTexCoord = gTexCoord[1];
-		fNormal = gNormal[1];
-		EmitVertex();
-
-		gl_Position = gl_in[2].gl_Position;
-		fTexCoord = gTexCoord[2];
-		fNormal = gNormal[2];
-		EmitVertex();
-
-		EndPrimitive();
-	//}
-
+	EndPrimitive();
 }

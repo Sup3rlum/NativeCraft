@@ -4,6 +4,7 @@
 #include "VisibilityMesh.h"
 #include "FrameTime.h"
 #include "Texture.h"
+#include "BoundingBox.h"
 
 using namespace glm;
 
@@ -24,5 +25,7 @@ public:
 
 	vec2 GridPosition;
 	mat4x4 World;
+
+	BoundingBox _box;
 };
 
