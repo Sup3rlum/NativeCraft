@@ -9,12 +9,19 @@ Frustum::Frustum(mat4 PV)
 		row[i] = transpose(PV)[i];
 	}
 
-	zNear =		Plane(row[3] + row[2]);
+	/*zNear =		Plane(row[3] + row[2]);
 	zFar =		Plane(row[3] - row[2]);
 	Left =		Plane(row[3] + row[0]);
 	Right =		Plane(row[3] - row[0]);
 	Top =		Plane(row[3] - row[1]);
-	Bottom =	Plane(row[3] + row[1]);
+	Bottom =	Plane(row[3] + row[1]);*/
+
+	planes[0]	= Plane(row[3] + row[2]);
+	planes[1]	= Plane(row[3] - row[2]);
+	planes[2]	= Plane(row[3] + row[0]);
+	planes[3]	= Plane(row[3] - row[0]);
+	planes[4]	= Plane(row[3] - row[1]);
+	planes[5]	= Plane(row[3] + row[1]);
 }
 
 bool Frustum::Contains(BoundingBox _b)
@@ -23,32 +30,46 @@ bool Frustum::Contains(BoundingBox _b)
 }
 bool Frustum::Contains(vec3 _p)
 {
-	return Left.DistanceSigned(_p) > 0 && Right.DistanceSigned(_p) > 0 && zNear.DistanceSigned(_p) > 0 && zFar.DistanceSigned(_p) > 0;
+	return	true;/*Left.DistanceSigned(_p) > 0 &&
+			Right.DistanceSigned(_p) > 0 && 
+			zNear.DistanceSigned(_p) > 0 && 
+			zFar.DistanceSigned(_p) > 0;*/
 }
 
 IntersectionType Frustum::Intersects(BoundingBox _b)
 {
 	vec3* corns = _b.GetCorners();
 
-	int _t = 0;
+	IntersectionType type = IntersectionType::Contains;
 
-	for (int i = 0; i < 8; i++)
+	int out;
+	int in;
+
+	for (int i = 0; i < 6; i++)
 	{
-		if (Contains(corns[i]))
+
+		// reset counters for corners in and out
+		out = 0; in = 0;
+		// for each corner of the box do ...
+		// get out of the cycle as soon as a box as corners
+		// both inside and out of the frustum
+		for (int k = 0; k < 8 && (in == 0 || out == 0); k++) 
 		{
-			_t++;
+
+			// is the corner outside or inside
+			if (planes[i].DistanceSigned(corns[k]) < 0)
+				out++;
+			else
+				in++;
 		}
-			
+		//if all corners are out
+		if (!in)
+			return IntersectionType::Disjoint;
+		// if some corners are out and others are in
+		else if (out)
+			type = IntersectionType::Intersects;
+
 	}
 
-	if (_t == 0)
-	{
-		return IntersectionType::Disjoint;
-	}
-	if (_t == 8)
-	{
-		return IntersectionType::Contains;
-	}
-
-	return IntersectionType::Intersects;
+	return type;
 }

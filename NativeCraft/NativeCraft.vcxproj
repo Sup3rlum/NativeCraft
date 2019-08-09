@@ -163,10 +163,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlockIDTextureManager.cpp" />
     <ClCompile Include="BoundingBox.cpp" />
     <ClCompile Include="DebugView.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="GeneratorSettings.cpp" />
+    <ClCompile Include="LinkedGrid2D.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="RenderBatch.cpp" />
     <ClCompile Include="Vertex.cpp" />
@@ -182,14 +185,16 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexElements.cpp" />
-    <ClCompile Include="VisibilityMesh.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlockIDTextureManager.h" />
     <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="DebugView.h" />
     <ClInclude Include="FrameBuffer.h" />
     <ClInclude Include="Frustum.h" />
+    <ClInclude Include="GeneratorSettings.h" />
+    <ClInclude Include="LinkedGrid2D.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="RenderBatch.h" />
@@ -206,7 +211,6 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexElements.h" />
-    <ClInclude Include="VisibilityMesh.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -230,8 +234,11 @@
     <None Include="shaders\vert.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="textures\atlas.jpg" />
+    <Image Include="textures\atlas2.jpg" />
     <Image Include="textures\dirt.jpg" />
     <Image Include="textures\heightmap.png" />
+    <Image Include="textures\minecraft1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

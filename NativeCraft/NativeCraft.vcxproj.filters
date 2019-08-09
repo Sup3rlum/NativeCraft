@@ -13,6 +13,9 @@
     <Filter Include="textures">
       <UniqueIdentifier>{ed45f6f4-019e-4ffe-bcd3-07ff347cc8da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\ParticleSystems">
+      <UniqueIdentifier>{38b77162-84f3-4316-a92c-e4f444722ad8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shader.cpp">
@@ -48,9 +51,6 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="VisibilityMesh.cpp">
-      <Filter>Source\World</Filter>
-    </ClCompile>
     <ClCompile Include="Vertex.cpp">
       <Filter>Source\World</Filter>
     </ClCompile>
@@ -76,6 +76,15 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Frustum.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockIDTextureManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratorSettings.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedGrid2D.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,9 +122,6 @@
     <ClInclude Include="Texture.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="VisibilityMesh.h">
-      <Filter>Source\World</Filter>
-    </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Source\World</Filter>
     </ClInclude>
@@ -144,6 +150,15 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Frustum.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedGrid2D.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockIDTextureManager.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratorSettings.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -208,6 +223,15 @@
       <Filter>textures</Filter>
     </Image>
     <Image Include="textures\heightmap.png">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\minecraft1.png">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\atlas.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\atlas2.jpg">
       <Filter>textures</Filter>
     </Image>
   </ItemGroup>

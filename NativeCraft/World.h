@@ -7,27 +7,27 @@
 #include "Shader.h"
 #include "Camera.h"
 #include "Frustum.h"
+#include "BlockIDTextureManager.h"
+#include "GeneratorSettings.h"
 
 using namespace std;
 
 class World
 {
 public:
-	World();
+	World(GeneratorSettings* _gen);
 
-	vector<unsigned long> _idTable;
 
-	vector<Chunk*>_loadedChunks;
+	unordered_map<uint64_t, Chunk*>* _loadedChunks;
 
 	Shader* _shader;
 	Texture* _texture;
 	Texture* _heightmap;
 
-	Chunk* _chunk;
+	GeneratorSettings* _genSettings;
 
-	Frustum* _cf;
-
-	void Render(Shader* _shader, Camera* _camera, FrameTime* _frTime);
+	void Render(Camera* _camera, FrameTime* _frTime);
 	void Update(FrameTime* _frTime);
+	void GenerateSpawnArea();
 };
 

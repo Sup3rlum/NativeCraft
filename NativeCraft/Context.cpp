@@ -26,7 +26,8 @@ int Context::Initialize(ContextParameters* _params)
 		_frameTime->TotalTime = glfwGetTime();
 
 		glEnable(GL_DEPTH_TEST);
-
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_FRONT);
 
 		Update(_frameTime);
 		Frame(_frameTime);

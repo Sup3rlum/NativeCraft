@@ -14,6 +14,7 @@ public:
 
 	IntersectionType Intersects(BoundingBox _box);
 
-	Plane zNear, zFar, Left, Right, Top, Bottom;
+	//Plane zNear, zFar, Left, Right, Top, Bottom;
+	Plane planes[6];
 };
 

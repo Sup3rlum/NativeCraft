@@ -20,11 +20,7 @@ public:
 
 	World* _world;
 	Camera* _camera;
-
 	RenderBatch* _rb;
-
-	Shader* _ImmShader;
-
 
 	ContextParameters* _params;
 

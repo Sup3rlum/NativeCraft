@@ -1,43 +1,57 @@
 #include "World.h"
 
 
-World::World()
+World::World(GeneratorSettings* _gen)
 {
 	_shader = new Shader("./shaders/vert.glsl", "./shaders/frag.glsl");
 
-	_texture = new Texture("./textures/dirt.jpg");
+	_texture = new Texture("./textures/atlas.jpg");
 	_heightmap = new Texture("./textures/heightmap.png");
 
+	BlockIDTextureManager::Init();
+
+	_genSettings = _gen;
+
+
+	_loadedChunks = new unordered_map<uint64_t, Chunk*>();
 
 	for (int i = 0; i < 16; i++)
 	{
 		for (int j = 0; j < 16; j++)
 		{
-			_loadedChunks.push_back(new Chunk(_heightmap, vec2(i, j)));
+			(*_loadedChunks)[ncpair(i,j)] = new Chunk(_heightmap, ivec2(i, j));
 		}
 	}
 
+	for (auto kv : *_loadedChunks)
+	{
+		kv.second->ComputeVisibility(_loadedChunks);
+	}
 }
 
-void World::Render(Shader* _shader, Camera* _camera, FrameTime* _frTime)
+void World::Render(Camera* _camera, FrameTime* _frTime)
 {
 
-	_cf = new Frustum(_camera->Projection * _camera->View);
+	_shader->UseProgram();
+	_shader->SetMatrix("Projection", _camera->Projection);
+	_shader->SetMatrix("View", _camera->View);
+	_shader->SetVector("LightDirection", vec3(-1, -1, -1));
 
 	_shader->SetTexture(0, _texture);
 
-	for (int i = 0; i < _loadedChunks.size(); i++)
+	for (auto kv : *_loadedChunks)
 	{
-		if (_cf->Contains(_loadedChunks[i]->_box))
-		{
-			_shader->SetMatrix("World", translate(identity<mat4>(), vec3(_loadedChunks[i]->GridPosition.x * 16, 0, _loadedChunks[i]->GridPosition.y * 16)));
-			_loadedChunks[i]->Render(_frTime);
-		}
+		_shader->SetMatrix("World", translate(identity<mat4>(), vec3(kv.second->GridPosition.x * 16, 0, kv.second->GridPosition.y * 16)));
+		kv.second->Render(_frTime);
 	}
 
 }
 
 void World::Update(FrameTime* _frTime)
+{
+
+}
+void World::GenerateSpawnArea()
 {
 
 }

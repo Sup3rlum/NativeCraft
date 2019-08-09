@@ -49,3 +49,21 @@ typedef struct VertexColor
 
 	static vector<VertexElements> Elements;
 };
+
+typedef struct VertexNormalTextureAmbience
+{
+	vec3 _position;
+	vec3 _normal;
+	vec2 _texCoord;
+	float _ambience;
+
+	VertexNormalTextureAmbience(vec3 pos, vec3 norm, vec2 tex, float ambience)
+	{
+		_position = pos;
+		_normal = norm;
+		_texCoord = tex;
+		_ambience = ambience;
+	}
+
+	static vector<VertexElements> Elements;
+};
